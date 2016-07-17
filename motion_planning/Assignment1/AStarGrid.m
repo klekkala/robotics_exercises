@@ -111,7 +111,60 @@ while true
     % entries in the map, f, g and parent arrays
     %
     
+    ii=0;
+    jj=0;
+    if (i>1 && i<=nrows) %% UP
+        ii = i-1;
+        jj = j;
+        if (map(ii,jj)~=2 && map(ii,jj)~=3 && map(ii,jj)~=5)
+            if g(ii,jj) > (g(i,j) + (H(ii,jj)-H(i,j)))
+                g(ii,jj) = g(i,j) + (H(ii,jj)-H(i,j));
+                f(ii,jj) = g(ii,jj) + H(ii,jj);
+                map(ii,jj) = 4;
+                parent(ii,jj) = current;
+            end
+        end
+    end
+    if (i>=1 && i<nrows) % DOWN
+        ii = i+1;
+        jj = j;
+        if (map(ii,jj)~=2 && map(ii,jj)~=3 && map(ii,jj)~=5)
+            if g(ii,jj) > (g(i,j) + (H(ii,jj)-H(i,j)))
+                g(ii,jj) = g(i,j) + (H(ii,jj)-H(i,j));
+                f(ii,jj) = g(ii,jj) + H(ii,jj);
+                map(ii,jj) = 4;
+                parent(ii,jj) = current;
+            end
+        end
+    end
+    if (j>1 && j<=ncols) % LEFT
+        jj = j-1;
+        ii = i;
+        if (map(ii,jj)~=2 && map(ii,jj)~=3 && map(ii,jj)~=5)
+            if g(ii,jj) > (g(i,j) + (H(ii,jj)-H(i,j)))
+                g(ii,jj) = g(i,j) + (H(ii,jj)-H(i,j));
+                f(ii,jj) = g(ii,jj) + H(ii,jj);
+                map(ii,jj) = 4;
+                parent(ii,jj) = current;
+            end
+        end
+    end
+    if (j>=1 && j<ncols) %RIGHT
+        jj =j+1;
+        ii = i;
+        if (map(ii,jj)~=2 && map(ii,jj)~=3 && map(ii,jj)~=5)
+            if g(ii,jj) > (g(i,j) + (H(ii,jj)-H(i,j)))
+                g(ii,jj) = g(i,j) + (H(ii,jj)-H(i,j));
+                f(ii,jj) = g(ii,jj) + H(ii,jj);
+                map(ii,jj) = 4;
+                parent(ii,jj) = current;
+            end
+        end
+    end
     
+    numExpanded = numExpanded + 1;
+    
+    f(current) = Inf; 
     
     
     
