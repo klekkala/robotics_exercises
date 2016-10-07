@@ -10,3 +10,6 @@ function E = EssentialMatrixFromFundamentalMatrix(F,K)
 
 
 
+
+E = transpose(K).F.K;
+E = E/norm(E);

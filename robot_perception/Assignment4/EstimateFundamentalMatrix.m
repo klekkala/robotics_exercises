@@ -10,3 +10,5 @@ function F = EstimateFundamentalMatrix(x1, x2)
 
 
 
+F = estimateFundamentalMatrix(x1, x2);
+F = F/norm(F);
