@@ -84,7 +84,8 @@ for i=1:num_frames
     H = est_homography(corner_pts,p);
     [proj_pts, pos{i}, rot{i}] = ar_cube(H,render_points,K);
     % Copy the RGB values from the logo_img to the video frame
-    generated_imgs{i} = draw_ar_cube(proj_pts,generated_imgs{i}); 
+    proj_pts
+    %generated_imgs{i} = draw_ar_cube(proj_pts,generated_imgs{i}); 
     
 end
 

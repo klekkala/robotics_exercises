@@ -22,11 +22,14 @@ R = U*S_prime*V';
 t = H(:,3)/norm(H(:,1));
 
 proj_points = [];
+proj_points = zeros(8, 2);
+
+
 for i=1:size(render_points, 1)
 X_c = K*(R*render_points(i, :)' + t);
 X_im = X_c/X_c(3);
 X_im(3) = [];
-proj_points = [proj_points;[X_im(1), X_im(2)]];
-X_im
+proj_points(i,:) = [X_im(1), X_im(2)];
 end
+
 end
