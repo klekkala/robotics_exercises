@@ -39,7 +39,7 @@ ylabel('Y (meters)');
 % Call your mapping function here.
 % Running time could take long depending on the efficiency of your code.
 % This overlays the predicted positions against the observed positions
-state = [0,0,0,0];
+state = [0;0;0;0];
 last_t = -1;
 N = numel(t);
 myPredictions = zeros(2, N);

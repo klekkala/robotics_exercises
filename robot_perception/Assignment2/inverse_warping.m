@@ -7,7 +7,6 @@ function [ projected_img ] = inverse_warping( img_final, img_initial, pts_final,
 % YOU SHOULDN'T NEED TO CHANGE THIS
 pts_final = ceil(pts_final);
 pts_initial = ceil(pts_initial);
-
 ind_final= sub2ind([size(img_final,1), size(img_final,2)],...
     pts_final(:,2),...
     pts_final(:,1));
@@ -25,4 +24,3 @@ for color = 1:3
 end
 
 end
-

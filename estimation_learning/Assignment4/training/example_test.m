@@ -38,7 +38,7 @@ axis equal;
 % Running time could take long depending on the efficiency of your code.
 % For a quicker test, you may take some hundreds frames as input arguments as
 % shown.
-%pose = particleLocalization(ranges(:,1:1000), scanAngles, M, param);
+pose = particleLocalization(ranges(:,1:1000), scanAngles, M, param);
 load practice-answer.mat;
 
 %% Plot final solution
