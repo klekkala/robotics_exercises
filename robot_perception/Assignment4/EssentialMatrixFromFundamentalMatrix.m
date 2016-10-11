@@ -8,8 +8,7 @@ function E = EssentialMatrixFromFundamentalMatrix(F,K)
 % Outputs:
 %     E - size (3 x 3) Essential matrix with singular values (1,1,0)
 
-
-
-
-E = transpose(K).F.K;
+E = K' * F * K;
+[u,d,v] = svd(E);
+E = u * [1 0 0; 0 1 0; 0 0 0] * v';
 E = E/norm(E);
